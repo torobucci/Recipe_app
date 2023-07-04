@@ -1,6 +1,7 @@
 @ruby -x "%~f0" %*
 @exit /b %ERRORLEVEL%
 
+#!/usr/bin/env ruby
 # frozen_string_literal: true
 
 #
