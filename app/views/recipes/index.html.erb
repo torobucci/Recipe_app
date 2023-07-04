@@ -4,9 +4,9 @@
     <div class = 'recipe'>
       <div class='recipe-name'>
           <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
-          <%# <% if can? :destroy, recipe %>
-            <%= button_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%# <% end %>
+          <% if can? :destroy, recipe %>
+            <%= button_to 'Delete', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
       </div>
       <p><%=recipe.description %></p>
     </div>
