@@ -1,0 +1,17 @@
+<h1>Food List</h1>
+<ul class="flex">
+    <li>Food</li>
+    <li>Measuring Unit</li>
+    <li>Unit Price</li>
+    <li>Actions</li>
+</ul>
+<ul class="flex col">
+<% @foods.each do |food| %>
+<li class="flex">
+    <p><%= food.name %></p>
+    <p><%= food.measurement_unit %></p>
+    <p><%= food.price %></p>
+    <button>Delete</button>
+</li>
+<% end %>
+</ul>
