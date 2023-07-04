@@ -1,0 +1,46 @@
+<div>
+  <div class= "content">
+    <h1><%= @recipe.name %></h1>
+    <div class= "recipe-details">
+       <div class = 'details'>
+         <p>Preparation Time: <%=@recipe.preparation_time%> hours</p>
+         <p>Cooking Time: <%=@recipe.cooking_time%> hours</p>
+         <div class= 'steps'>
+           steps go here...
+         </div>
+       </div>
+       <div>
+         <p>Public</p>
+         <button class= 'toggle'></button>
+       </div>
+    </div>
+    <div class="recipe-buttons">
+       <button>Generate shopping list</button>
+       <button>Add ingredient </button>
+    </div>
+    <table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.quantity %></td>
+        <td><%= food.price %></td>
+        <td>
+          <button>Modify</button>
+           <button>Delete</button>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  </div>
+</div>
