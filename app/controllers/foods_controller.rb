@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @foods = Food.all
   end
@@ -8,8 +9,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
-    @food.user_id = 1
+    @food = current_user.foods.build(food_params)
     if @food.save
       redirect_to foods_path, notice: 'Food successfully created.'
     else
