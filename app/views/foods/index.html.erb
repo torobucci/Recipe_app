@@ -1,18 +1,19 @@
 <h1>Food List</h1>
 <%= link_to 'Add Food', new_food_path %>
 <ul class="flex">
-    <li>Food</li>
-    <li>Measuring Unit</li>
-    <li>Unit Price</li>
-    <li>Actions</li>
+  <li>Food</li>
+  <li>Measuring Unit</li>
+  <li>Unit Price</li>
+  <li>Actions</li>
 </ul>
 <ul class="flex col">
-<% @foods.each do |food| %>
-<li class="flex">
-    <p><%= food.name %></p>
-    <p><%= food.measurement_unit %></p>
-    <p><%= food.price %></p>
-    <button>Delete</button>
-</li>
-<% end %>
+  <% @foods.each do |food| %>
+    <li>
+      <h3><%= food.name %></h3>
+      <p><%= food.measurement_unit %></p>
+      <p><%= food.price %></p>
+
+      <%= link_to 'Delete', food_path(food), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
 </ul>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'public_recipe/index'
   get 'public_recipes/index'
   get 'foods/new'
   get 'foods/create'
@@ -9,5 +10,6 @@ Rails.application.routes.draw do
       get 'public_recipe', to: 'recipes#public_recipe'
     end
   end
-  resources :foods, only: %i[index new create]
+  resources :foods, only: %i[index new create destroy]
+  resources :public_recipes, only: %i[index]
 end

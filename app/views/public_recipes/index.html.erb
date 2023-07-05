@@ -1,0 +1,21 @@
+<h1>Public Recipes</h1>
+<ul>
+  <% @public_recipes.each do |recipe| %>
+    <li>
+      <div>
+        <% @users.each do |user| %>
+          <% if user.id == recipe.user_id %>
+            <div>
+              <h2><%= recipe.name %></h2>
+              <p>by <%= user.name %></p>
+            </div>
+            <div>
+              <p>Total Food Items: <%= nil %></p>
+              <p>by Total Price: <%= nil %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
