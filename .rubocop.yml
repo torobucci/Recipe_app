@@ -21,8 +21,7 @@ Metrics/BlockLength:
   Exclude:
     - './db/schema.rb'
     - './spec/post_spec.rb'
-    - './spec/requests/**/*'
-    - './spec/features/**/*'
+    - './spec/**/*_spec.rb'
   Max: 30
 Metrics/PerceivedComplexity:
   Exclude:
