@@ -51,3 +51,30 @@ input:checked + .slider::before {
   -ms-transform: translateX(16px);
   transform: translateX(16px);
 }
+
+/* Styles for the navigation menu */
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #555;
+}
