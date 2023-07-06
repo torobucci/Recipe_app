@@ -72,6 +72,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'minitest', '~> 5.16'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

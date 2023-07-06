@@ -85,3 +85,9 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+Capybara.default_driver = :selenium_chrome
+# rails_helper.rb or spec_helper.rb
+RSpec.configure do |config|
+  config.include Devise::Test::IntegrationHelpers, type: :request
+  # Other configuration settings...
+end

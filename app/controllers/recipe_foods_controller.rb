@@ -7,7 +7,7 @@ class RecipeFoodsController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @food = Food.create(food_params)
     @food.user = current_user
-    @recipe_food = @recipe.recipe_foods.build(food: @food)
+    @recipe_food = @recipe.recipe_foods.build(food: @food, quantity: @food.quantity)
     if @recipe_food.save
       redirect_to recipe_path(@recipe), notice: 'Ingredient added successfully created.'
     else
