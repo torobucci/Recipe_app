@@ -1,5 +1,5 @@
 <h1>Add Food to recipe</h1>
-<%= form_with(model: @food, url: recipe_foods_path, method: :post) do |form| %>
+<%= form_with(model: @food, url:  recipe_recipe_foods_path, method: :post) do |form| %>
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>

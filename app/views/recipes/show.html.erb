@@ -21,7 +21,7 @@
     <div class="recipe-buttons">
       <button>Generate shopping list</button>
       <% if can? :update, @recipe  %>
-        <%= link_to 'Add ingredient', recipe_food_new_path(@recipe.id,@recipe.id) %>
+        <button><%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %></button>
       <% end %>
     </div>
     <table>
@@ -34,7 +34,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @foods.each do |food| %>
+        <% @recipe.foods.each do |food| %>
           <tr>
             <td><%= food.name %></td>
             <td><%= food.quantity %></td>
