@@ -214,3 +214,24 @@ tr:hover {
 .recipe button:hover {
   background-color: #f00;
 }
+
+li {
+  list-style: none;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.flex .flex {
+  width: 100%;
+}
+
+.foods_table {
+  border: solid 1px #333;
+  padding-right: 3rem;
+}

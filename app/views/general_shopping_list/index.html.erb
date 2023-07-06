@@ -3,7 +3,7 @@
     <% if @foods.blank? %>
     <p>Your shopping list is currently empty!</p>
     <% else %>
-    <div class="shopping_list_p">
+    <div class="shopping_list_p flex">
         <p>Amount of food items to buy: <strong><%= @foods.count%></strong></p>
         <p>Total value of food needed: <strong>$<%= @foods.sum { |food| food.price * food.quantity } %></strong></p>
     </div>
