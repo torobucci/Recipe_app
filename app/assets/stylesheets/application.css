@@ -1,3 +1,70 @@
+/* container */
+.container {
+  margin: 20px auto;
+  padding: 20px 20px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+}
+
+/* login and sign_up page */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.field {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* recipe_details */
+
+.content {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.recipe-details,
+.public,
+.recipe-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.public {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.public p {
+  margin: 0;
+}
+
+.recipe-buttons button {
+  background-color: #5f5d5d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
 /* CSS for the toggle button */
 .toggle {
   position: relative;
@@ -50,4 +117,100 @@ input:checked + .slider::before {
   -webkit-transform: translateX(16px);
   -ms-transform: translateX(16px);
   transform: translateX(16px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Public recipes */
+#recipes-h2 {
+  margin-left: 40%;
+  font-size: 30px;
+}
+
+.recipe-list {
+  border: 1px solid black;
+  padding: 10px;
+  list-style: none;
+}
+
+.recipe-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.recipe-list h2 {
+  margin: 0;
+}
+
+.recipe-list p {
+  margin: 0;
+}
+
+.recipe-list li div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Recipe_lists */
+.recipe {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recipe h2 {
+  margin: 0;
+}
+
+.recipe p {
+  margin: 0;
+}
+
+.recipe button {
+  background-color: #f55;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  width: min-content;
+}
+
+.recipe button:hover {
+  background-color: #f00;
 }

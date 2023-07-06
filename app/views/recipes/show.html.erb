@@ -9,7 +9,7 @@
           steps go here...
         </div>
       </div>
-      <div>
+      <div class = "public">
         <p>Public</p>
         <label class="toggle" data-recipe-id="<%= @recipe.id %>">
           <input type="checkbox" id="public-toggle" <%= @recipe.public ? 'checked' : '' %>>
@@ -17,9 +17,12 @@
         </label>
       </div>
     </div>
+
     <div class="recipe-buttons">
       <button>Generate shopping list</button>
-      <button>Add ingredient</button>
+      <% if can? :update, @recipe  %>
+        <%= link_to 'Add ingredient', recipe_food_new_path(@recipe.id,@recipe.id) %>
+      <% end %>
     </div>
     <table>
       <thead>
