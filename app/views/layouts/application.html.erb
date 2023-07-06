@@ -8,11 +8,17 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+   <%= javascript_include_tag 'application', crossorigin: 'anonymous' %>
+
+
   </head>
 
   <body>
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
-    <%= yield %>
+     <div class ="container">
+     <%= yield %>
+     </div>
+
   </body>
 </html>

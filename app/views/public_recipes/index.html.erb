@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Public Recipes</h1>
 <ul>
   <% @public_recipes.each do |recipe| %>
@@ -15,6 +16,18 @@
             </div>
           <% end %>
         <% end %>
+=======
+<ul class = "recipe-list">
+  <% @public_recipes.each do |recipe| %>
+    <li>
+      <div>
+        <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+        <p>by <%= recipe.user.name %></p>
+      </div>
+      <div>
+        <p>Total food items: <%= recipe.foods.count %></p>
+        <p>Total price: <%= recipe.foods.sum(:price) %>$</p>
+>>>>>>> dev
       </div>
     </li>
   <% end %>
