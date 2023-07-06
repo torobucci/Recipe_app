@@ -1,8 +1,6 @@
 class RecipesController < ApplicationController
-  # load_and_authorize_resource
-
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def show
@@ -10,14 +8,21 @@ class RecipesController < ApplicationController
     @foods = @recipe.foods
   end
 
-  def public_recipe
-    @public_recipes = Recipe.where(public: true)
-    @users = User.all
-  end
-
   def destroy
     @recipe = Recipe.find_by(id: params[:id])
     @recipe.destroy
     redirect_to recipes_path, notice: 'Recipe successfully deleted.'
+  end
+
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    render json: { success: true }
+  end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:public)
   end
 end
