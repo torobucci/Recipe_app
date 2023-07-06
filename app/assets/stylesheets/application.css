@@ -9,6 +9,11 @@
 }
 
 /* login and sign_up page */
+
+li {
+  list-style: none;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -215,10 +220,6 @@ tr:hover {
   background-color: #f00;
 }
 
-li {
-  list-style: none;
-}
-
 .col {
   flex-direction: column;
 }
@@ -227,6 +228,7 @@ li {
   display: flex;
   justify-content: space-between;
 }
+
 .flex .flex {
   width: 100%;
 }
