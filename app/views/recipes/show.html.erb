@@ -1,5 +1,4 @@
-<div>
-  <div class="content">
+<div class="content">
     <h1><%= @recipe.name %></h1>
     <div class="recipe-details">
       <div class="details">
@@ -10,11 +9,14 @@
         </div>
       </div>
       <div class = "public">
-        <p>Public</p>
-        <label class="toggle" data-recipe-id="<%= @recipe.id %>">
-          <input type="checkbox" id="public-toggle" <%= @recipe.public ? 'checked' : '' %>>
-          <span class="slider"></span>
-        </label>
+        <% if can? :update, @recipe  %>
+          <p>Public</p>
+          <label class="toggle">
+            <input type="checkbox" id="public-toggle" <%= @recipe.public ? 'checked' : '' %>
+               onchange="updateDatabase(<%= @recipe.id %>, this.checked)">
+            <span class="slider"></span>
+          </label>
+        <% end %>
       </div>
     </div>
 
@@ -48,4 +50,3 @@
       </tbody>
     </table>
   </div>
-</div>
