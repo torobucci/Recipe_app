@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'general_shopping_list/index'
   devise_for :users
   root 'recipes#index'
   resources :recipes, only: %i[index show destroy] do
