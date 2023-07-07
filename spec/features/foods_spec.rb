@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Foods', type: :feature do
-  let!(:user) { User.create!(name: 'Lanzz', email: 'lanzz2@gmail.com', password: '123456') }
+  let(:user) { User.create!(name: 'Lanzz', email: 'lanzz2@gmail.com', password: '123456') }
   let(:food1) do
     Food.create!(
       name: 'rice',
       measurement_unit: 'kg',
       price: 60,
-      quantity: 'A delicious rice food',
+      quantity: 2,
       user_id: user.id
     )
   end
@@ -16,7 +16,7 @@ RSpec.describe 'Foods', type: :feature do
       name: 'rice',
       measurement_unit: 'kg',
       price: 60,
-      quantity: 'A delicious rice food',
+      quantity: 2,
       user_id: user.id
     )
   end

@@ -4,8 +4,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find_by(id: params[:id])
-    @foods = @recipe.foods
+    @recipe = Recipe.includes(:foods).find_by(id: params[:id])
   end
 
   def destroy
@@ -15,9 +14,14 @@ class RecipesController < ApplicationController
   end
 
   def toggle_public
-    @recipe = Recipe.find(params[:id])
-    @recipe.update(public: !@recipe.public)
-    render json: { success: true }
+    recipe = Recipe.find(params[:id])
+    recipe.update(public: params[:public])
+
+    if recipe.save
+      head :ok
+    else
+      head :bad_request
+    end
   end
 
   private
