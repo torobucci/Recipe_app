@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'foods', type: :request do
- user = User.create!(name: 'Lanzz', email: 'lanzz@gmail.com', password: '123456')
+  user = User.create!(name: 'Lanzz', email: 'lanzz3@gmail.com', password: '123456')
   describe 'GET /foods' do
     it 'returns a successful response' do
       get foods_path
@@ -13,7 +13,7 @@ RSpec.describe 'foods', type: :request do
     let(:food) do
       Food.create!(
         name: 'rice',
-        measurement_unit: "kg",
+        measurement_unit: 'kg',
         price: 60,
         quantity: 'A delicious rice recipe',
         user_id: user.id
