@@ -11,6 +11,7 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.build(food_params)
     if @food.save
+      @food = @food.includes(:user)
       redirect_to foods_path, notice: 'Food successfully created.'
     else
       render :new
