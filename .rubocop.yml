@@ -1,0 +1,64 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'Guardfile'
+    - 'Rakefile'
+    - 'node_modules/**/*'
+
+  DisplayCopNames: true
+
+Layout/LineLength:
+  Exclude:
+    - './config/initializers/**/*'
+  Max: 120
+Metrics/MethodLength:
+  Max: 20
+Metrics/AbcSize:
+  Max: 50
+Metrics/ClassLength:
+  Max: 150
+Metrics/BlockLength:
+  Exclude:
+    - './db/schema.rb'
+    - './spec/post_spec.rb'
+    - './spec/**/*_spec.rb'
+  Max: 30
+Metrics/PerceivedComplexity:
+  Exclude:
+    - './bin/*'
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - './bin/*'
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/EachForSimpleLoop:
+  Enabled: false
+Style/AndOr:
+  Enabled: false
+Style/DefWithParentheses:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never
+
+Layout/HashAlignment:
+  EnforcedColonStyle: key
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+Layout/EndOfLine:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false

@@ -1,0 +1,356 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(71, 60, 60);
+}
+
+/* login and sign_up page */
+li {
+  list-style: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.field {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* container */
+.container {
+  margin: 0 auto;
+  padding: 0 20px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 700px;
+}
+
+/* recipe_details */
+.content {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.recipe-details,
+.public,
+.recipe-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.public {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.public p {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.recipe-buttons a {
+  color: white;
+}
+
+.recipe-buttons button {
+  background-color: #5f5d5d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.recipe-buttons button:hover {
+  background-color: #1d1a1a;
+}
+
+/* CSS for the toggle button */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #11cf21;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #11cf21;
+}
+
+input:checked + .slider::before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Styles for the navigation menu */
+nav {
+  background-color: #333;
+  padding: 0 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #b3b2b2;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Public recipes */
+#recipes-h2 {
+  margin-left: 40%;
+  font-size: 30px;
+}
+
+.recipe-list {
+  border: 1px solid black;
+  padding: 10px;
+  list-style: none;
+}
+
+.recipe-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.recipe-list h2 {
+  margin: 0;
+}
+
+.recipe-list p {
+  margin: 0;
+}
+
+.recipe-list li div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+/* Recipe_lists */
+.recipe {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.delete-btn {
+  background-color: #f55;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  width: min-content;
+}
+
+.delete-btn:hover {
+  background-color: #f00;
+}
+
+.food_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.food_list h2 {
+  align-self: center;
+  margin: 0;
+}
+
+.add-food,
+.add-recipe {
+  align-self: flex-end;
+  background-color: rgb(60, 230, 69);
+  color: rgb(71, 60, 60);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.primary-button {
+  background-color: rgba(34, 34, 190, 0.836);
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.primary-button:hover {
+  background-color: darkblue;
+}
+
+.add-recipe {
+  margin: 0 1rem;
+  margin-left: calc(100% - 136px);
+  width: max-content;
+}
+
+.notice {
+  background-color: #e0eaf1;
+  color: #325c80;
+  padding: 4px;
+  border: 1px solid #b3d7f7;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 4px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.table-row-btn {
+  display: flex;
+}

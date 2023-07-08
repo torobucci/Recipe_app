@@ -1,0 +1,16 @@
+<div>
+  <h2 id='recipes-h2'>Recipes</h2>
+  <button class='add-recipe'><%= link_to 'Create new Recipe', new_recipe_path %></button>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <div class = 'recipe'>
+      <div class='recipe-name'>
+          <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+          <% if can? :destroy, recipe %>
+            <%= button_to 'Delete', recipe_path(recipe), method: :delete, class: 'delete-btn' %>
+          <% end %>
+      </div>
+      <p><%=recipe.description %></p>
+    </div>
+  <% end %>
+</div>
+
