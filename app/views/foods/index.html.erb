@@ -1,21 +1,26 @@
-<h1>Food List</h1>
-
-<%= link_to 'Add Food', new_food_path %>
-<div class="foods_table">
-<ul class="flex">
-    <li>Food</li>
-    <li>Measuring Unit</li>
-    <li>Unit Price</li>
-    <li>Actions</li>
-</ul>
-<ul class="flex col">
-<% @foods.each do |food| %>
-<li class="flex">
-    <p><%= food.name %></p>
-    <p><%= food.measurement_unit %></p>
-    <p><%= food.price %></p>
-    <button>Delete</button>
-</li>
-<% end %>
-</ul>
+<div class='food_list'>
+  <h2>Food List</h2>
+  <button class='add-food'><%= link_to 'Add Food', new_food_path %></button>
+   <table>
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Measuring unit</th>
+          <th>Unit Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td>
+              <%= button_to 'Delete', food_path(food), method: :delete, class: 'delete-btn' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>

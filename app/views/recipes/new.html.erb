@@ -1,0 +1,26 @@
+<h1>Create new recipe</h1>
+<%= form_with(model: @recipe, url: recipes_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :preparation_time %>
+    <%= form.text_area :preparation_time %>
+  </div>
+  <div>
+    <%= form.label :cooking_time %>
+    <%= form.text_field :cooking_time %>
+  </div>
+  <div>
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.label :public %>
+    <%= form.text_field :public %>
+  </div>
+  <div>
+    <%= form.submit "Create Recipe" %>
+  </div>
+<% end %>

@@ -21,7 +21,7 @@
     </div>
 
     <div class="recipe-buttons">
-      <button>Generate shopping list</button>
+       <button><%= link_to 'Generate shopping list', recipe_general_shopping_list_index_path(@recipe)  %></button>
       <% if can? :update, @recipe  %>
         <button><%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe) %></button>
       <% end %>
@@ -36,17 +36,20 @@
         </tr>
       </thead>
       <tbody>
-        <% @recipe.foods.each do |food| %>
-          <tr>
-            <td><%= food.name %></td>
-            <td><%= food.quantity %></td>
-            <td><%= food.price %></td>
-            <td>
-              <button>Modify</button>
-              <button>Delete</button>
+        <% @recipe.recipe_foods.each do |recipe_food| %>
+        <% food = recipe_food.food %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.price %></td>
+          <% if can? :update, @recipe %>
+            <td class= 'table-row-btn'>
+             <button class="primary-button">Modify</button>
+             <%= button_to 'Delete', recipe_recipe_food_path(@recipe, recipe_food), method: :delete, class: 'delete-btn'%>
             </td>
-          </tr>
-        <% end %>
+          <% end %>
+        </tr>
+      <% end %>
       </tbody>
     </table>
   </div>

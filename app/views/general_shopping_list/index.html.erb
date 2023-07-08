@@ -5,7 +5,7 @@
     <% else %>
     <div class="shopping_list_p flex">
         <p>Amount of food items to buy: <strong><%= @shopping_list.count%></strong></p>
-        <p>Total value of food needed: <strong>$<%= @shopping_list.sum { |food| food.price * food.quantity } %></strong></p>
+        <p>Total value of food needed: <strong>$<%= @shopping_list.sum { |food| food["price"] * food["quantity"] } %></strong></p>
     </div>
     <table class="tables">
         <tr>
@@ -15,9 +15,9 @@
        </tr>
     <% @shopping_list.each do |food| %>
        <tr>
-         <td><%= food.name%></td>
-         <td><%= food.quantity%><%= food.measurement_unit%></td>
-         <td>$<%= food.price%></td>
+         <td><%= food["name"]%></td>
+         <td><%= food["quantity"]%><%= food["measurement_unit"]%></td>
+         <td>$<%= food["price"]%></td>
        </tr>
     <% end %>
     </table>
